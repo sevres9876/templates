@@ -2,6 +2,15 @@ from flask import Flask, redirect, render_template, request, url_for
 
 app = Flask(__name__)
 app.config["DEBUG"] = True
+SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}".format(
+    username="tomsawyer99",
+    password="Exeter22",
+    hostname="tomsawyer99.mysql.pythonanywhere-services.com",
+    databasename="tomsawyer99$comments",
+)
+app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
+app.config["SQLALCHEMY_POOL_RECYCLE"] = 299
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 comments = []
 
