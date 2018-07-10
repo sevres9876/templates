@@ -1,0 +1,12 @@
+<script type='text/javascript'>    $(function () 
+{        var interactionHandler = new Anywhere.ConsoleInteractionHandler(           
+$('#id_console_name'),            "dianefeinstein"        );       
+$('#id_sharing_button').click(function () { $('#id_share_dialog').dialog({ width: 500 }); });    });   
+var app = angular.module('ngConsoleShares');    // this boilerplate creates the url "service" which gets DI'd   
+// into the controller    app.factory('consoleShareUrls', function () { return
+{        get_sharees: "/user/dianefeinstein/consoles/9536051/get_sharees",      
+update: "/user/dianefeinstein/consoles/9536051/shares/:sharee/",       
+new_share: "/user/dianefeinstein/consoles/9536051/share",       
+share_with_students: "/user/dianefeinstein/consoles/9536051/share_with_students",       
+share_with_teacher: "/user/dianefeinstein/consoles/9536051/share_with_teacher",    };})
+</script>
